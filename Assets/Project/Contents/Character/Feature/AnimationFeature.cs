@@ -5,7 +5,7 @@ using CoreEngine.Actor;
 namespace Icarus.Character
 {
     [Serializable]
-    public class SharedActorAnimationFeature : BaseActorFeature
+    public class AnimationFeature : BaseActorFeature
     {
         private Animator _animator;
 

@@ -2,15 +2,14 @@ using CoreEngine;
 using CoreEngine.Actor;
 using CoreEngine.CameraSystem;
 using CoreEngine.EventBus;
-using CoreEngine.Manager;
-using CoreEngine.Manager.Pool;
+using CoreEngine.Pool;
 using CoreEngine.Network.FishNetExtension;
 using FishNet.Object.Synchronizing;
 using Icarus.Camera;
 using Icarus.Controller;
 using System;
-using Unity.Cinemachine;
 using UnityEngine;
+using Icarus.Character.State;
 
 namespace Icarus.Character
 {
@@ -26,9 +25,9 @@ namespace Icarus.Character
         public IPoolReleaser Releaser { get; set; }
 
         [Header("🪽 부품(Features) 조립")]
-        [SerializeField] private SharedActorMovementFeature _movementFeature = new();
-        [SerializeField] private SharedActorStateFeature _stateFeature = new();
-        [SerializeField] private SharedActorAnimationFeature _animationFeature = new();
+        [SerializeField] private MovementFeature _movementFeature = new();
+        [SerializeField] private StateControlFeature _stateControlFeature = new();
+        [SerializeField] private AnimationFeature _animationFeature = new();
 
         private RepeatEventProvider<SetCameraTargetEvent> _cameraTargetProvider;
         private RepeatEventProvider<SwitchCameraEvent> _cameraSwitchProvider;
@@ -44,7 +43,7 @@ namespace Icarus.Character
             _rb = GetComponent<Rigidbody>();
 
             _movementFeature.Initialize(this);
-            _stateFeature.Initialize(this);
+            _stateControlFeature.Initialize(this);
             _animationFeature.Initialize(this);
         }
 
@@ -64,7 +63,7 @@ namespace Icarus.Character
                 _cameraSwitchProvider.Bind();
             }
 
-            _stateFeature.StartState();
+            _stateControlFeature.StartState();
             _isSpawned = true;
         }
 
@@ -72,7 +71,7 @@ namespace Icarus.Character
         {
             _isSpawned = false;
             _clientInputs.Clear();
-            _stateFeature.StopState();
+            _stateControlFeature.StopState();
 
             _cameraTarget?.ReturnToParent(transform);
             _cameraTargetProvider?.Unbind();
@@ -118,14 +117,14 @@ namespace Icarus.Character
         {
             if (!this.IsServerInitialized || !_isSpawned) return;
 
-            _stateFeature.FixedTick(fixedDeltaTime);
+            _stateControlFeature.FixedTick(fixedDeltaTime);
             _movementFeature.FixedTick(fixedDeltaTime);
         }
 
         public bool TryGetFeature<T>(out T feature) where T : class, IActorFeature
         {
             if (_movementFeature is T move) { feature = move; return true; }
-            if (_stateFeature is T state) { feature = state; return true; }
+            if (_stateControlFeature is T state) { feature = state; return true; }
             if (_animationFeature is T anim) { feature = anim; return true; }
             feature = null; return false;
         }

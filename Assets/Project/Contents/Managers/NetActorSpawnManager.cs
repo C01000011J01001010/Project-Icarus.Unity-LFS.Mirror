@@ -1,12 +1,10 @@
-using CoreEngine.Network.FishNetExtension.Manager;
+using CoreEngine.Network.FishNetExtension.Spawn;
 using UnityEngine;
+using Icarus.Pool;
 
-namespace Icarus.Manager
+namespace Icarus.Spawn
 {
-    public enum NetActorPoolType
-    {
-        SharedActor,
-    }
+    
     public class NetActorSpawnManager : BaseNetObjectSpawnManager<NetActorPoolType, NetActorPoolManager>
     {
 

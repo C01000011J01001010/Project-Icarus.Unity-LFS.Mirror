@@ -7,7 +7,8 @@ using FishNet.Object; // FishNet 필수 네임스페이스
 using Icarus.Camera;
 using UnityEngine;
 using CoreEngine.Network.FishNetExtension;
-using CoreEngine.Manager.Input;
+using CoreEngine.Input;
+using Icarus.Input;
 
 namespace Icarus.Controller
 {

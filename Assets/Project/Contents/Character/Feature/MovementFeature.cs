@@ -6,7 +6,7 @@ using CoreEngine.Helpers;
 namespace Icarus.Character
 {
     [Serializable]
-    public class SharedActorMovementFeature : BaseActorFeature
+    public class MovementFeature : BaseActorFeature
     {
         [Header("이동 세팅")]
         [SerializeField] private float moveSpeed = 20f;
