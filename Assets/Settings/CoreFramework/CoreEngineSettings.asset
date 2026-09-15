@@ -27,6 +27,10 @@ MonoBehaviour:
       scenePath: Assets/Project/Scenes/Pooling Scene.unity
       sceneName: Pooling Scene
       sceneGUID: 526e74f75db24124c8615d86e4348efe
+    - sceneAsset: {fileID: 102900000, guid: 80404e754a8a3df41afbdf3965335920, type: 3}
+      scenePath: Assets/Project/Scenes/StateMachine Scene.unity
+      sceneName: StateMachine Scene
+      sceneGUID: 80404e754a8a3df41afbdf3965335920
     firstScene:
       sceneAsset: {fileID: 102900000, guid: fc986868429c0e44eb547788257b9d42, type: 3}
       scenePath: Assets/Project/Scenes/Title Scene.unity
@@ -36,4 +40,5 @@ MonoBehaviour:
     - 282b72738977da644bc7307f70d8f923
     - 21191e88a1644ea408d6ea5fea480b05
     - 526e74f75db24124c8615d86e4348efe
+    - 80404e754a8a3df41afbdf3965335920
     - fc986868429c0e44eb547788257b9d42
