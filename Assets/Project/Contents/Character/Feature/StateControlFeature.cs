@@ -7,7 +7,7 @@ namespace Icarus.Character.State
 {
 
     [Serializable]
-    public class StateControlFeature : BaseStateController<CharacterState, CharacterStateManager, StateControlFeature>
+    public class StateControlFeature : BaseStateController<CharacterState, CharacterStateManager>
     {
 
     }

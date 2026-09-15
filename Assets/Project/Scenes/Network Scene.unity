@@ -184,6 +184,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3006e70d4ac9ea4facc83edf7127681, type: 3}
+--- !u!1001 &791897541
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50.39095
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 568136124147043580, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 693282582769890988, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+      propertyPath: m_Name
+      value: NetworkObjectPoolBridge
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+--- !u!114 &791897542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 464569442395532934, guid: 2157b8281e5df174ca66430ee257dc1a, type: 3}
+  m_PrefabInstance: {fileID: 791897541}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2399b6d8a6aab6438f4afbca0bda981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreEngine.Network.Fishnet::CoreEngine.Network.FishNetExtension.Pool.NetworkObjectPoolBridge
 --- !u!1001 &1381402013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,6 +264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5888133599205833837, guid: 8c7ebabbba65f4a4b9e5ed665c95879c, type: 3}
+      propertyPath: _objectPool
+      value: 
+      objectReference: {fileID: 791897542}
     - target: {fileID: 5888133599205833838, guid: 8c7ebabbba65f4a4b9e5ed665c95879c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 144.24635
@@ -239,8 +311,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5888133599205833836, guid: 8c7ebabbba65f4a4b9e5ed665c95879c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1381402015}
   m_SourcePrefab: {fileID: 100100000, guid: 8c7ebabbba65f4a4b9e5ed665c95879c, type: 3}
+--- !u!1 &1381402014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5888133599205833836, guid: 8c7ebabbba65f4a4b9e5ed665c95879c, type: 3}
+  m_PrefabInstance: {fileID: 1381402013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1381402015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381402014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0962ead4b02a34aae248fccce671ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FishNet.Runtime::FishNet.Managing.Debugging.DebugManager
+  WriteSceneObjectDetails: 1
+  ValidateRpcLengths: 0
+  DisableObserversRpcLinks: 0
+  DisableTargetRpcLinks: 0
+  DisableServerRpcLinks: 0
+  DisableReplicateRpcLinks: 0
+  DisableReconcileRpcLinks: 0
 --- !u!1001 &1909687049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,5 +402,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1381402013}
+  - {fileID: 791897541}
   - {fileID: 164966031}
   - {fileID: 1909687049}

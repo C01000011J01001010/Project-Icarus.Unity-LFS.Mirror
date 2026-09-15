@@ -15,7 +15,7 @@ MonoBehaviour:
   _sceneTracker:
     globalScene:
       sceneAsset: {fileID: 102900000, guid: 282b72738977da644bc7307f70d8f923, type: 3}
-      scenePath: Assets/Project/Scenes/Global Scene.unity
+      scenePath: Packages/com.ycjun.core-framework/Scene/Global Scene.unity
       sceneName: Global Scene
       sceneGUID: 282b72738977da644bc7307f70d8f923
     extensionSceneList:
@@ -23,6 +23,10 @@ MonoBehaviour:
       scenePath: Assets/Project/Scenes/Network Scene.unity
       sceneName: Network Scene
       sceneGUID: 21191e88a1644ea408d6ea5fea480b05
+    - sceneAsset: {fileID: 102900000, guid: 526e74f75db24124c8615d86e4348efe, type: 3}
+      scenePath: Assets/Project/Scenes/Pooling Scene.unity
+      sceneName: Pooling Scene
+      sceneGUID: 526e74f75db24124c8615d86e4348efe
     firstScene:
       sceneAsset: {fileID: 102900000, guid: fc986868429c0e44eb547788257b9d42, type: 3}
       scenePath: Assets/Project/Scenes/Title Scene.unity
@@ -31,4 +35,5 @@ MonoBehaviour:
     _lastSyncedScenes:
     - 282b72738977da644bc7307f70d8f923
     - 21191e88a1644ea408d6ea5fea480b05
+    - 526e74f75db24124c8615d86e4348efe
     - fc986868429c0e44eb547788257b9d42

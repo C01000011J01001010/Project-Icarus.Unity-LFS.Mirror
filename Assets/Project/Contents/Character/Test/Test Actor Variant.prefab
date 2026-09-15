@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1996922961379574743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: SceneId
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: WasActiveDuringEdit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: <PrefabId>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: NetworkBehaviours.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: <AssetPathHash>k__BackingField
+      value: 15942013459320867102
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: 'NetworkBehaviours.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3395123200589223046}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: SerializedTransformProperties.Position.x
+      value: -73.97274
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: SerializedTransformProperties.Position.y
+      value: 108.13332
+      objectReference: {fileID: 0}
+    - target: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: SerializedTransformProperties.Position.z
+      value: -467.50278
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621293922719408498, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_Name
+      value: Test Actor Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -73.97274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 108.13332
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -467.50278
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624832764720287058, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7621293922719408498, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3395123200589223046}
+    - targetCorrespondingSourceObject: {fileID: 7621293922719408498, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8226447963007335375}
+  m_SourcePrefab: {fileID: 100100000, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+--- !u!114 &3413668382140980052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3812780409295935619, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+  m_PrefabInstance: {fileID: 1996922961379574743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246716178724119205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FishNet.Runtime::FishNet.Object.NetworkObject
+--- !u!1 &8246716178724119205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7621293922719408498, guid: ada6019c730e5344d9427d8b9ea82bb3, type: 3}
+  m_PrefabInstance: {fileID: 1996922961379574743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3395123200589223046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246716178724119205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb9c5407127459746ba2ca33c9745887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Icarus.Character.Test.TestActor
+  _componentIndexCache: 1
+  _addedNetworkObject: {fileID: 3413668382140980052}
+  _networkObjectCache: {fileID: 3413668382140980052}
+  myScope: 2
+--- !u!114 &-8226447963007335375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246716178724119205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71fd7f855ec523429999fc4e14a1928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FishNet.Runtime::FishNet.Observing.NetworkObserver
+  _overrideType: 3
+  _updateHostVisibility: 1
+  _observerConditions: []

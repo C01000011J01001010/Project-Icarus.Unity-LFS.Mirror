@@ -320,17 +320,17 @@
         "com.unity.cinemachine": "3.1.7",
         "com.unity.addressables": "2.9.1"
       },
-      "hash": "4ea7a8b2d1aabd76ec5087354dc8b9bcf87614ef"
+      "hash": "5f25cd6c1b0631c2041b4258b9245fd8acd69d10"
     },
     "com.ycjun.core-framework.network.fishnet": {
       "version": "https://github.com/C01000011J01001010/CoreFrameWork.Network.Fishnet.Mirror.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.ycjun.core-framework": "1.0.28",
+        "com.ycjun.core-framework": "1.0.35",
         "com.firstgeargames.fishnet": "4.7.2"
       },
-      "hash": "ccb4eaf8fa18d8e1399ea4629d9307493210d9ef"
+      "hash": "9ea6200ef7d3a56b182b999abd352784a06d5f1f"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

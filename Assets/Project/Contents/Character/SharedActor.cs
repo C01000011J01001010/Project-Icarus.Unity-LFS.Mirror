@@ -10,6 +10,7 @@ using Icarus.Controller;
 using System;
 using UnityEngine;
 using Icarus.Character.State;
+using System.Collections;
 
 namespace Icarus.Character
 {
@@ -29,6 +30,7 @@ namespace Icarus.Character
         [SerializeField] private StateControlFeature _stateControlFeature = new();
         [SerializeField] private AnimationFeature _animationFeature = new();
 
+        // 캐릭터가 도중에 바뀌든 카메라가 도중에 바뀌든 세팅하기 편하도록
         private RepeatEventProvider<SetCameraTargetEvent> _cameraTargetProvider;
         private RepeatEventProvider<SwitchCameraEvent> _cameraSwitchProvider;
 
@@ -36,46 +38,65 @@ namespace Icarus.Character
         private CameraNetTarget _cameraTarget;
         private Rigidbody _rb;
         private bool _isSpawned;
+        private bool _isFeatureInit = false;
 
         public override void Awake()
         {
             base.Awake();
             _rb = GetComponent<Rigidbody>();
 
-            _movementFeature.Initialize(this);
-            _stateControlFeature.Initialize(this);
-            _animationFeature.Initialize(this);
-        }
-
-        public void OnSpawn()
-        {
-            // Ping-Pong 패턴: 카메라가 먼저 켜졌든 늦게 켜졌든 안전하게 통신
             _cameraTarget = GetComponentInChildren<CameraNetTarget>();
             if (_cameraTarget != null)
             {
-                _cameraTarget.DecoupleAndFollow(transform);
                 Func<SetCameraTargetEvent> cameraTargetEventFunc = () => new SetCameraTargetEvent(_cameraTarget, typeof(ThirdPersonCameraController));
                 _cameraTargetProvider = new RepeatEventProvider<SetCameraTargetEvent>(cameraTargetEventFunc);
-                _cameraTargetProvider.Bind();
 
                 Func<SwitchCameraEvent> cameraSwitchEventFunc = () => new SwitchCameraEvent(typeof(ThirdPersonCameraController));
                 _cameraSwitchProvider = new RepeatEventProvider<SwitchCameraEvent>(cameraSwitchEventFunc);
+            }
+        }
+
+        protected override void OnSafeSpawn()
+        {
+
+            if (_cameraTarget != null)
+            {
+                _cameraTarget.DecoupleAndFollow(transform);
+                _cameraTargetProvider.Bind();
                 _cameraSwitchProvider.Bind();
+            }
+
+            if (!_isFeatureInit)
+            {
+                _movementFeature.Initialize(this);
+                _stateControlFeature.Initialize(this);
+                _animationFeature.Initialize(this);
+                _isFeatureInit = true;
             }
 
             _stateControlFeature.StartState();
             _isSpawned = true;
         }
 
-        public void OnDespawn()
+        protected override void OnSafeDespawn()
         {
             _isSpawned = false;
-            _clientInputs.Clear();
+
+            if (IsServerInitialized)
+            {
+                // Client가 탈출하면서 초기화 하는것 방지
+                // 오로지 서버만 권한이 있음
+                _clientInputs.Clear();
+            }
+
             _stateControlFeature.StopState();
 
-            _cameraTarget?.ReturnToParent(transform);
-            _cameraTargetProvider?.Unbind();
-            _cameraSwitchProvider?.Unbind();
+            if (_cameraTarget != null)
+            {
+                _cameraTarget.ReturnToParent(transform);
+                _cameraTargetProvider.Unbind();
+                _cameraSwitchProvider.Unbind();
+            }
 
             if (_rb != null)
             {
@@ -87,7 +108,6 @@ namespace Icarus.Character
         public override void OnStartServer()
         {
             base.OnStartServer();
-            // ServerManager.Spawn() 처리가 완전히 끝나서 서버 권한이 확정된 시점입니다.
             EventBus<SharedActorMoveEvent>.Subscribe(OnSharedActorMove);
             EventBus<SharedActorFlapEvent>.Subscribe(OnSharedActorWingFlap);
         }
@@ -95,7 +115,6 @@ namespace Icarus.Character
         public override void OnStopServer()
         {
             base.OnStopServer();
-            // ServerManager.Despawn()이 호출되어 객체가 풀로 돌아갈 때 자동으로 귀를 닫습니다.
             EventBus<SharedActorMoveEvent>.Unsubscribe(OnSharedActorMove);
             EventBus<SharedActorFlapEvent>.Unsubscribe(OnSharedActorWingFlap);
         }
@@ -104,7 +123,7 @@ namespace Icarus.Character
         {
             base.OnStartClient();
 
-            if (!base.IsServerInitialized)
+            if (!IsServerInitialized)
             {
                 _rb.isKinematic = true;
             }

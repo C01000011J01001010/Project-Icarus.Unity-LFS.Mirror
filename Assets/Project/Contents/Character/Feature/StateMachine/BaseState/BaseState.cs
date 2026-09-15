@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Icarus.Character.State
 {
-    public abstract class BaseState : BaseState<CharacterState, StateControlFeature>
+    public abstract class BaseState : BaseState<CharacterState>
     {
 
     }

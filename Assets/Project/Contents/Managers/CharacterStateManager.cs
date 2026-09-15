@@ -1,4 +1,6 @@
-﻿using CoreEngine.DesignPattern.StateMachine;
+﻿using CoreEngine;
+using CoreEngine.DesignPattern.StateMachine;
+using CoreEngine.Manager;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,8 +18,10 @@ namespace Icarus.Character.State
         // 물에 떠 있을 때
         Water = 20,
     }
-    public class CharacterStateManager : BaseStateManager<CharacterState, StateControlFeature>
+    public class CharacterStateManager : BaseStateManager<CharacterState>, IPriority
     {
+        public int Priority => (int)ManagerPriority.BusinessLogic;
+
         protected override void Awake()
         {
             base.Awake();
